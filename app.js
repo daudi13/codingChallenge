@@ -38,15 +38,13 @@ team1: 1.33,
 x: 3.25,
 team2: 6.5,
 },
-    printGoal: function (noOfPlayers, goals) {
-        const noOfGoals = goals.length
-    console.log(noOfPlayers, noOfGoals)
-}
 };
 
 //create one player array for each team (varibales 'players' and players2)
 
-const [player1, player2] = [...game.players]
+const [player1, player2] = game.players
+
+console.log(player1)
 
 //for Bayern Munich(team1) create one varibale ('gk') with the goalkeeper's name, and one array('fieldPlayer') with all the remaining 10 field players
 
@@ -77,10 +75,13 @@ console.log(team2);
 //write a function('printGoal') that receives an arbitrary number of player names (not an array) and prints each of them to the console, along with the number of goals that were scored in total(number of players names passed in)
 
 
-const printfunc = game.printGoal(...player1, game.scored)
-console.log(printfunc);
+const printGoals = function (...players) {
+    console.log(`the ${players.length} goals were scored by ${players}`)
+}
 
+printGoals(...game.scored);
 
 //the team with the lower odd is more likely to win. Print to the console which team is more likely to win, without an if?else statement or the ternary operator
 
-console.log(team1 > team2 || team2 > team1)
+team2 < team1 && console.log('Team 2 is more likely to win')
+team1 < team2 && console.log('Team 1 is more likely to win');
