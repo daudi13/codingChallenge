@@ -88,4 +88,12 @@ printGoals('Davis', 'Muller', 'Lewandowski', 'Kimmich');
 
 team1 < team2 && console.log('team 1 is more likely to win the match');
 
-team2 < team1 && console.log('team 2 is more likely to win the match')
+team2 < team1 && console.log('team 2 is more likely to win the match');
+
+//loop over the game.scored array and print each player's name to the console along with the number of goal number( Example: Goal 1: Lewandowski);
+
+const goals = [...game.scored];
+
+for (const [goal, player] of goals.entries()) {
+    console.log(`${goal + 1}: ${player}`);
+}
